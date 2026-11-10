@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a0a1a;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* 粒子背景 */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* 主容器 */
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* 故障文字特效 */
+.glitch {
+    font-size: 72px;
+    font-weight: bold;
+    position: relative;
+    color: #0ff;
+    margin-bottom: 10px;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 2s infinite;
+    color: #f0f;
+}
+
+.glitch::after {
+    animation: glitch-2 2s infinite;
+    color: #0ff;
+}
+
+@keyframes glitch-1 {
+    0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 2px); }
+    20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -2px); }
+    40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 1px); }
+    60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, 2px); }
+    80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, -1px); }
+    100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, 2px); }
+}
+
+@keyframes glitch-2 {
+    0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -2px); }
+    20% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 2px); }
+    40% { clip-path: inset(30% 0 20% 0); transform: translate(2px, 1px); }
+    60% { clip-path: inset(70% 0 10% 0); transform: translate(-2px, -1px); }
+    80% { clip-path: inset(20% 0 50% 0); transform: translate(1px, 2px); }
+    100% { clip-path: inset(50% 0 30% 0); transform: translate(-1px, -2px); }
+}
+
+.subtitle {
+    font-size: 20px;
+    opacity: 0.8;
+    margin-bottom: 50px;
+}
+
+/* 卡片 */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.3);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    width: 220px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 30px rgba(0,255,255,0.5);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* 按钮 */
+#magicBtn {
+    padding: 15px 40px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #0ff, #f0f);
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#magicBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255,0,255,0.6);
+}
+
+#tip {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #0ff;
+    min-height: 24px;
+}
